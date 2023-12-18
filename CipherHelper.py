@@ -22,3 +22,17 @@ for char in input:
 parsedInput = input.upper()
 
 print(parsedInput)
+
+#Print possible solutions
+for i in range(1,26):
+    output = ""
+    for char in parsedInput:
+        if ord(char) == 32:
+            output += char
+        else:
+            newChrCode = ord(char) + i
+            if newChrCode > 90:
+                newChrCode -= 26
+            output += chr(newChrCode)
+    
+    print(output)
